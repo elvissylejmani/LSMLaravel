@@ -27,7 +27,7 @@ Route::get('/zhanri', function () {
         echo $liber;
     }
     return dd($zhanri);*/
-    $roli = User::findOrFail(1)->Roli;
+    $roli = Libri::findOrFail(1)->ShtepiaBotuese;
     echo $roli;
   
     // return $libri;
