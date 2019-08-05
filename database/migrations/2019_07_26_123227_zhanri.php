@@ -14,7 +14,7 @@ class Zhanri extends Migration
     public function up()
     {
         Schema::create('Zhanri', function (Blueprint $table) {
-            $table->bigIncrements('ID_Zhanri');
+            $table->bigIncrements('id');
             $table->string('Zhanri');
         });
 
