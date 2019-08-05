@@ -20,7 +20,7 @@ class CreateLibrisTable extends Migration
             $table->unsignedInteger('ID_Zhanri');
             $table->string('Titulli');
             $table->string('Autori');
-            $table->string('ShtepiaBotuese');
+            $table->unsignedInteger('ID_ShtepiaBotuese');
             $table->unsignedInteger('NumriIFaqeve');
             $table->date('VitiIBotimit');
             $table->date('VitiIRibotimit')->nullable();
