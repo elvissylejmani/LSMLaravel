@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 Route::get('/zhanri', function () {
 
-    $libri = Libri::find(1)->Zhanret;
+    $libri = Libri::find(1)->Rafti;
     $zhanri = zhanri::find(1)->Librat;
     foreach ($libri as $liber) {
         echo $liber;

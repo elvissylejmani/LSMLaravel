@@ -11,4 +11,8 @@ class Libri extends Model
     {
         return $this->hasMany(zhanri::class, 'id', 'id');
     }
+    public function Rafti()
+    {
+        return $this->hasMany(Rafti::class, 'ID_Rafti', 'id');
+    }
 }
