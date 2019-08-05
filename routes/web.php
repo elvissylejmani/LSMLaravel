@@ -1,5 +1,7 @@
 <?php
 
+use App\zhanri;
+use App\Libri;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +14,17 @@
 */
 
 Route::get('/', function () {
+
     return view('welcome');
+});
+Route::get('/zhanri', function () {
+
+    //$libri = Libri::find(1)->Zhanret;
+    $zhanri = zhanri::find(1);
+    foreach ($zhanri as $liber ) {
+        echo $liber;
+    }
+  
+    //return dd($libri);
+    // return $libri;
 });
