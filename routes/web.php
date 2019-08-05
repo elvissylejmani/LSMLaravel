@@ -2,6 +2,8 @@
 
 use App\zhanri;
 use App\Libri;
+use App\Roli;
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,12 +21,14 @@ Route::get('/', function () {
 });
 Route::get('/zhanri', function () {
 
-    $libri = Libri::find(1)->Rafti;
+    /*$libri = Libri::find(1)->Rafti;
     $zhanri = zhanri::find(1)->Librat;
     foreach ($libri as $liber) {
         echo $liber;
     }
-    return dd($zhanri);
+    return dd($zhanri);*/
+    $roli = User::findOrFail(1)->Roli;
+    echo $roli;
   
     // return $libri;
 });
