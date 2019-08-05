@@ -15,6 +15,8 @@ class CreateShtepiaBotuesesTable extends Migration
     {
         Schema::create('shtepia_botueses', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('ShtepiaBotuese_Emri');
+            $table->string('ShtepiaBotuese_Qyteti')->nullable();
             $table->timestamps();
         });
     }
