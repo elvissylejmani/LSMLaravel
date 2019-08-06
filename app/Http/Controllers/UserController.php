@@ -4,6 +4,7 @@ namespace LSM\Http\Controllers;
 
 use Illuminate\Http\Request;
 use LSM\User;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
@@ -43,6 +44,11 @@ class UserController extends Controller
             'ID_Roli' => 'required',
             'Email' => 'required',
             'password' => ['required', 'min:6']
+        ]);
+        $attributes['password']= Hash::make('password', [
+            'memory' => 1024,
+            'time' => 2,
+            'threads' => 2,
         ]);
         User::create($attributes);
         return redirect('/User');
