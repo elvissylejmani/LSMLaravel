@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace LSM\Http\Controllers;
 
 use Illuminate\Http\Request;
 
@@ -34,7 +34,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

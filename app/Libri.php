@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace LSM;
 
 use Illuminate\Database\Eloquent\Model;
 
