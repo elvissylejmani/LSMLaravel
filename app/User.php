@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace LSM;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Roli()
+    {
+        return $this->hasMany(Roli::class, 'id', 'ID_Roli');
+    }
 }
