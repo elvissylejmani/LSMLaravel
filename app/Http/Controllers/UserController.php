@@ -13,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('User');
     }
 
     /**
@@ -34,7 +34,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $attributes = request()->validate([
+            'Emri' => 'required',
+            'Mbiemri' => 'required',
+            'NrPersonal' => 'required',
+            'NrIdentifikues' => 'required',
+            'DataELindjes' => 'required',
+            'ID_Roli' => 'required',
+            'Librat'.
+            'Eail' => 'required',
+            'password' => ['required', 'min:6'],
+            'Mbiemri' => 'required',
+        ]);
+        quotes::create($attributes);
+        return redirect('/User');
     }
 
     /**
