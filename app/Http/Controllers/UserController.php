@@ -41,10 +41,8 @@ class UserController extends Controller
             'NrIdentifikues' => 'required',
             'DataELindjes' => 'required',
             'ID_Roli' => 'required',
-            'Librat'.
             'Eail' => 'required',
-            'password' => ['required', 'min:6'],
-            'Mbiemri' => 'required',
+            'password' => ['required', 'min:6','confirmed'],
         ]);
         quotes::create($attributes);
         return redirect('/User');

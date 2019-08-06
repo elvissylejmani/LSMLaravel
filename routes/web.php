@@ -32,4 +32,4 @@ Route::get('/zhanri', function () {
   
     // return $libri;
 });
-Route::resource('/admin', 'UserController');
+Route::resource('/Admin', 'UserController');
