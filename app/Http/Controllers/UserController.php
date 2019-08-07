@@ -75,6 +75,8 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+      $user = User::findOrFail($id);
+        dd($user);
     }
 
     /**
