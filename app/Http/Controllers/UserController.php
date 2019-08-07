@@ -54,7 +54,7 @@ class UserController extends Controller
             'threads' => 2,
         ]);
         User::create($attributes);
-        return redirect('/User');
+        return redirect('/Admin');
     }
 
     /**
