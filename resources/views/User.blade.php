@@ -18,6 +18,7 @@
         <input type="email" name="Email" value="{{ old('Email')}}" id="">
         <input type="password" name="password" value="{{ old('password')}}" id="">
         <input type="submit" value="submit">
+    </form>
         @if ($errors->any())
 <div class="notification is-danger">
 
@@ -43,14 +44,15 @@ Userat:
      <li> @foreach ($user->roli as $roli)
         {{$roli->Roli}}
     @endforeach</li>
-     @if ($user->Librat != null)
-     <li>  {{$user->Librat}}</li>
-     @endif  
+     @if ($user->Librat != null) 
+     <li>  {{$user->Librat}}</li>  @endif
+     <li>   {{$user->Email}}</li>
+     <li><a href="{{$user->id}}/edit">Edit</a></li>
+    
+   @endforeach
      
-      <li>   {{$user->Email}}</li>
-      <li><a href="{{$user->id}}/edit">Edit</a></li>
      
-    @endforeach
+     
 </ul>
 @endif
 </body>
