@@ -17,7 +17,7 @@ class UserController extends Controller
         $users = User::all();
         $roli = User::findOrFail(1)->roli;
   
-          return view('User',compact('users'));
+        return view('User',compact('users'));
     }
 
     /**

@@ -6,6 +6,5 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>   
-<h1> TEST </h1>
 </body>
 </html>
