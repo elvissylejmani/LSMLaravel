@@ -32,8 +32,9 @@ Route::get('/zhanri', function () {
   
     // return $libri;
 });
-Route::resource('/admin', 'UserController');
 
 Route::get('/librat', 'LibriController@index');
 Route::get('/librat/create', 'LibriController@create');
 Route::post('/librat/edit', 'LibriController@edit');
+Route::post('/librat','LibriController@store');
+Route::resource('/Admin', 'UserController');

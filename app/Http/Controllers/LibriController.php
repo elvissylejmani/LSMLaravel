@@ -3,6 +3,7 @@
 namespace LSM\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LSM\Libri;
 
 class LibriController extends Controller
 {
@@ -13,9 +14,7 @@ class LibriController extends Controller
      */
     public function index()
     {
-        $librat = Libri::all();
-
-        return view('librat.index', compact('librat'));
+        return view('Libri');
 
     }
 
@@ -49,14 +48,14 @@ class LibriController extends Controller
             'ID_ShtepiaBotuese' => 'required',
             'NumriIFaqeve' => 'required',
             'VitiIBotimit' => 'required',
-            'VitiIRibotimit'.
-            'Vellimi'.
+            'VitiIRibotimit',
+            'Vellimi' => 'required',
             'ID_Rafti' => 'required',
             'Statusi' => 'required',
             'NumriILexuesve' => 'required',
         ]);
-        quotes::create($attributes);
-        //return redirect('/User');
+        Libri::create( $attributes);
+        return redirect('/Libri');
     }
 
     /**

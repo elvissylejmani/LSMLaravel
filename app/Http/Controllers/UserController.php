@@ -3,7 +3,7 @@
 namespace LSM\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use LSM\User;
 class UserController extends Controller
 {
     /**
@@ -41,12 +41,10 @@ class UserController extends Controller
             'NrIdentifikues' => 'required',
             'DataELindjes' => 'required',
             'ID_Roli' => 'required',
-            'Librat'.
-            'Eail' => 'required',
-            'password' => ['required', 'min:6'],
-            'Mbiemri' => 'required',
+            'Email' => 'required',
+            'password' => ['required', 'min:6']
         ]);
-        quotes::create($attributes);
+        User::create($attributes);
         return redirect('/User');
     }
 
