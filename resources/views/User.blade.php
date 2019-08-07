@@ -31,5 +31,10 @@
 </div>
 @endif
     </form>
+@if ($users->Count())
+    @foreach ($users as $user)
+        
+    @endforeach
+@endif
 </body>
 </html>
