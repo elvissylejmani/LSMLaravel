@@ -4,6 +4,7 @@ namespace LSM\Http\Controllers;
 
 use Illuminate\Http\Request;
 use LSM\User;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
@@ -13,7 +14,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('User');
+        $users = User::all();
+        $roli = User::findOrFail(1)->roli;
+  
+          return view('User',compact('users'));
     }
 
     /**
@@ -44,8 +48,13 @@ class UserController extends Controller
             'Email' => 'required',
             'password' => ['required', 'min:6']
         ]);
+       $attributes['password']= Hash::make('password', [
+            'memory' => 1024,
+            'time' => 2,
+            'threads' => 2,
+        ]);
         User::create($attributes);
-        return redirect('/User');
+        return redirect('/Admin');
     }
 
     /**
@@ -68,6 +77,7 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+return $user = User::findOrFail($id);
     }
 
     /**

@@ -18,6 +18,7 @@
         <input type="email" name="Email" value="{{ old('Email')}}" id="">
         <input type="password" name="password" value="{{ old('password')}}" id="">
         <input type="submit" value="submit">
+    </form>
         @if ($errors->any())
 <div class="notification is-danger">
 
@@ -31,5 +32,28 @@
 </div>
 @endif
     </form>
+@if ($users->Count())
+Userat:
+<ul>
+    @foreach ($users as $user)
+     <li>   {{$user->Emri}} </li>
+      <li>   {{$user->Mbiemri}}  </li>
+      <li>   {{$user->NrPersonal}}</li>
+      <li>   {{$user->NrIdentifikues}}</li>
+     <li>    {{$user->DataELindjes}}</li>
+     <li> @foreach ($user->roli as $roli)
+        {{$roli->Roli}}
+    @endforeach</li>
+     @if ($user->Librat != null) 
+     <li>  {{$user->Librat}}</li>  @endif
+     <li>   {{$user->Email}}</li>
+     <li><a href="{{$user->id}}/edit">Edit</a></li>
+    
+   @endforeach
+     
+     
+     
+</ul>
+@endif
 </body>
 </html>
