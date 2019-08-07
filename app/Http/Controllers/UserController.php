@@ -15,9 +15,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        $roli = User::findOrFail(1)->roli;
-  
-        return view('User',compact('users'));
+          return view('insert',compact('users'));
     }
 
     /**
@@ -27,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+      
     }
 
     /**
@@ -54,7 +52,7 @@ class UserController extends Controller
             'threads' => 2,
         ]);
         User::create($attributes);
-        return redirect('/Admin');
+        return redirect('/Admin/user');
     }
 
     /**
@@ -65,7 +63,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::all();
+        return view('user',compact('users'));
+      
     }
 
     /**
