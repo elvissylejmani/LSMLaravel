@@ -3,9 +3,9 @@
 namespace LSM\Http\Controllers;
 
 use Illuminate\Http\Request;
-use LSM\User;
-use Illuminate\Support\Facades\Hash;
-class UserController extends Controller
+use LSM\Libri;
+
+class LibriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-          return view('insert',compact('users'));
+        return view('Libri');
+
     }
 
     /**
@@ -25,7 +25,9 @@ class UserController extends Controller
      */
     public function create()
     {
-      
+        //
+        $zhanri = Zhanri::lists('Zhanri', 'id')->all();
+        $shtepiaBotuese = ShtepiaBotuese::lists('ShtepiaBotuese_Emri', 'id')->all();
     }
 
     /**
@@ -36,23 +38,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        //
         $attributes = request()->validate([
-            'Emri' => 'required',
-            'Mbiemri' => 'required',
-            'NrPersonal' => 'required',
-            'NrIdentifikues' => 'required',
-            'DataELindjes' => 'required',
-            'ID_Roli' => 'required',
-            'Email' => 'required',
-            'password' => ['required', 'min:6']
+            'NumriSerik' => 'required',
+            'FotoLibrit' => 'required',
+            'ID_Zhanri' => 'required',
+            'Titulli' => 'required',
+            'Autori' => 'required',
+            'ID_ShtepiaBotuese' => 'required',
+            'NumriIFaqeve' => 'required',
+            'VitiIBotimit' => 'required',
+            'VitiIRibotimit',
+            'Vellimi' => 'required',
+            'ID_Rafti' => 'required',
+            'Statusi' => 'required',
+            'NumriILexuesve' => 'required',
         ]);
-       $attributes['password']= Hash::make('password', [
-            'memory' => 1024,
-            'time' => 2,
-            'threads' => 2,
-        ]);
-        User::create($attributes);
-        return redirect('/Admin/user');
+        Libri::create( $attributes);
+        return redirect('/Libri');
     }
 
     /**
@@ -63,9 +66,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $users = User::all();
-        return view('user',compact('users'));
-      
+        //
     }
 
     /**
@@ -77,7 +78,6 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-return $user = User::findOrFail($id);
     }
 
     /**
