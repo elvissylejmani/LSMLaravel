@@ -22,7 +22,7 @@ Userat:
     @endforeach</li>
      @if ($user->Librat != null)<li>{{$user->Librat}}</li>@endif
      <li>   {{$user->Email}}</li>
-     <li><a href="Admin/{{$user->id}}/edit">Edit</a></li>
+     <li><a href="{{$user->id}}/edit">Edit</a></li>
     
    @endforeach
      
