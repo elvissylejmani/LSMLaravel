@@ -40,12 +40,16 @@ Userat:
       <li>   {{$user->NrPersonal}}</li>
       <li>   {{$user->NrIdentifikues}}</li>
      <li>    {{$user->DataELindjes}}</li>
-      <li>   {{$user->ID_Roli}}</li>
+     <li> @foreach ($user->roli as $roli)
+        {{$roli->Roli}}
+    @endforeach</li>
      @if ($user->Librat != null)
      <li>  {{$user->Librat}}</li>
      @endif  
+     
       <li>   {{$user->Email}}</li>
-      <li><a href="Admin/{{$user->id}}/edit">Edit</a></li>
+      <li><a href="{{$user->id}}/edit">Edit</a></li>
+     
     @endforeach
 </ul>
 @endif
