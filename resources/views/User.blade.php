@@ -7,31 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="Admin" method="POST">
-        @csrf
-        <input type="text" name="Emri" value="{{ old('Emri')}}" id="">
-        <input type="text" name="Mbiemri" value="{{ old('Mbiemri')}}" id="">
-        <input type="text" name="NrPersonal" value="{{ old('NrPersonal')}}" id="">
-        <input type="text" name="NrIdentifikues" value="{{ old('NrIdentifikues')}}" id="">
-        <input type="date" name="DataELindjes" value="{{ old('DataELindjes')}}" id="">
-        <input type="text" name="ID_Roli" value="{{ old('ID_Roli')}}" id="">
-        <input type="email" name="Email" value="{{ old('Email')}}" id="">
-        <input type="password" name="password" value="{{ old('password')}}" id="">
-        <input type="submit" value="submit">
-    </form>
-        @if ($errors->any())
-<div class="notification is-danger">
-
     
-    <ul>
-@foreach ($errors->all() as $error)
-<li>{{ $error }}</li>
-@endforeach
-</ul>
-
-</div>
-@endif
-    </form>
 @if ($users->Count())
 Userat:
 <ul>
@@ -44,10 +20,9 @@ Userat:
      <li> @foreach ($user->roli as $roli)
         {{$roli->Roli}}
     @endforeach</li>
-     @if ($user->Librat != null) 
-     <li>  {{$user->Librat}}</li>  @endif
+     @if ($user->Librat != null)<li>{{$user->Librat}}</li>@endif
      <li>   {{$user->Email}}</li>
-     <li><a href="{{$user->id}}/edit">Edit</a></li>
+     <li><a href="Admin/{{$user->id}}/edit">Edit</a></li>
     
    @endforeach
      
