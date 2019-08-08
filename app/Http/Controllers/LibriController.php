@@ -65,7 +65,8 @@ class LibriController extends Controller
      */
     public function show($id)
     {
-        //
+        $libri = Libri::findOrFail($id);
+        return view('EditLibri',compact('libri'));
     }
 
     /**
@@ -76,7 +77,7 @@ class LibriController extends Controller
      */
     public function edit($id)
     {
-        return $libri = Libri::findOrFail($id);
+        
     }
 
     /**
@@ -88,7 +89,9 @@ class LibriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $libri = Libri::findOrFail($id);
+        $libri->update(request()->all());
+        return redirect('librat');
     }
 
     /**
