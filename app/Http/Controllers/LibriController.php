@@ -14,7 +14,9 @@ class LibriController extends Controller
      */
     public function index()
     {
-        return view('Libri');
+        $librat = Libri::all();
+      
+          return view('Libri',compact('librat'));
 
     }
 
@@ -25,9 +27,6 @@ class LibriController extends Controller
      */
     public function create()
     {
-        //
-        $zhanri = Zhanri::lists('Zhanri', 'id')->all();
-        $shtepiaBotuese = ShtepiaBotuese::lists('ShtepiaBotuese_Emri', 'id')->all();
     }
 
     /**
@@ -55,7 +54,7 @@ class LibriController extends Controller
             'NumriILexuesve' => 'required',
         ]);
         Libri::create( $attributes);
-        return redirect('/Libri');
+        return redirect('/librat');
     }
 
     /**
@@ -77,7 +76,7 @@ class LibriController extends Controller
      */
     public function edit($id)
     {
-        //
+        return $libri = Libri::findOrFail($id);
     }
 
     /**
