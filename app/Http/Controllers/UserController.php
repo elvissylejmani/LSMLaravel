@@ -90,8 +90,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        return $user = User::findOrFail($id);
+         $user = User::findOrFail($id);
+         $user->update(request()->all());
+         return redirect('Admin');
     }
 
     /**
