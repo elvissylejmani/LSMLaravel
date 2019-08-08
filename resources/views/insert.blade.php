@@ -47,7 +47,11 @@ Userat:
      @if ($user->Librat != null)<li>{{$user->Librat}}</li>@endif
      <li>   {{$user->Email}}</li>
      <li><a href="Admin/{{$user->id}}">Edit</a></li>
-    
+     <li> <form action="Admin/{{$user->id}}" method="POST">
+       @csrf
+       @method('DELETE') 
+       <button type="submit">Delete</button>
+    </form></li>
    @endforeach
      
      

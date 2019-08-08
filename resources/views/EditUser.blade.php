@@ -23,8 +23,10 @@
 
 @endforeach) --}} ">
 </li>
-<li><input type="text" name="" id="" value="@if($user->Librat == null) Nuk ka Libra @else {{$user->Librat}}@endif"></li>
-<li><input type="text" name="" id="" value="{{$user->Email}}"></li>
+@if ($user->Librat != null)
+<li><input type="text" name="Librat" id="" value="{{$user->Librat}}"></li>
+@endif
+<li><input type="text" name="Email" id="" value="{{$user->Email}}"></li>
 </ul>
 
 
