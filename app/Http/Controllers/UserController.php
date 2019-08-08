@@ -15,6 +15,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+      
           return view('insert',compact('users'));
     }
 
@@ -52,7 +53,7 @@ class UserController extends Controller
             'threads' => 2,
         ]);
         User::create($attributes);
-        return redirect('/Admin/user');
+        return redirect('/Admin');
     }
 
     /**
