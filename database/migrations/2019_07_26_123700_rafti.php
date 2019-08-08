@@ -13,7 +13,7 @@ class Rafti extends Migration
      */
     public function up()
     {
-        Schema::create('Rafti', function (Blueprint $table) {
+        Schema::create('Raftis', function (Blueprint $table) {
             $table->bigIncrements('ID_Rafti');
             $table->string('Rafti');
         });

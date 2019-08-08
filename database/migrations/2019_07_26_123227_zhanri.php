@@ -13,7 +13,7 @@ class Zhanri extends Migration
      */
     public function up()
     {
-        Schema::create('Zhanri', function (Blueprint $table) {
+        Schema::create('Zhanris', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Zhanri');
         });
