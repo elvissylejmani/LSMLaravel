@@ -60,20 +60,24 @@ Librat:
     @foreach ($librat as $libri)
      <li>   {{$libri->NumriSerik}} </li>
       <li>   {{$libri->FotoLibrit}}  </li>
-      <li> @foreach ($libri->Zhanret as $Zhanri)
-        {{$Zhanri->Zhanri}}
+      <li> @foreach ($libri->Zhanret as $zhanri)
+        {{$zhanri->Zhanri}}
     @endforeach</li>
       <!-- <li>   {{$libri->ID_Zhanri}}</li> -->
       <li>   {{$libri->Titulli}}</li>
      <li>    {{$libri->Autori}}</li>
-     <li>   {{$libri->ID_ShtepiaBotuese}}</li>
+     <li> @foreach ($libri->ShtepiaBotuese as $shtepia)
+        {{$shtepia->ShtepiaBotuese_Emri}}
+    @endforeach</li>
       <li>   {{$libri->NumriIFaqeve}}</li>
      <li>    {{$libri->VitiIBotimit}}</li>
-     <li>   {{$libri->VitiIRibotimit}}</li>
+     <li> @if($libri->VitiIRibotimit == null) Nuk eshte ribotuar libri @else  {{$libri->VitiIRibotimit}} @endif</li>
       <li>   {{$libri->Vellimi}}</li>
-     <li>    {{$libri->ID_Rafti}}</li>
+     <li> @foreach ($libri->Rafti as $rafti)
+        {{$rafti->Rafti}}
+    @endforeach</li>
      <li>    {{$libri->NumriILexuesve}}</li>
-     <li><a href="{{$libri->id}}/edit">Edit</a></li>    
+     <li><a href="librat/{{$libri->id}}">Edit</a></li>    
    @endforeach
     
 </ul>
