@@ -23,8 +23,6 @@
 
 @endforeach) --}} ">
 </li>
-<li><input type="text" name="" id="" value="{{$user->Librat}}"></li>
-<li><input type="text" name="" id="" value="{{$user->Email}}"></li>
 </ul>
 
 
