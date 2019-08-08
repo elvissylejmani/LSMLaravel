@@ -64,8 +64,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $users = User::all();
-        return view('user',compact('users'));
+        $user = User::findOrFail($id);
+        return view('EditUser',compact('user'));
       
     }
 
@@ -78,7 +78,7 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-return $user = User::findOrFail($id);
+       
     }
 
     /**
@@ -91,6 +91,7 @@ return $user = User::findOrFail($id);
     public function update(Request $request, $id)
     {
         //
+        return $user = User::findOrFail($id);
     }
 
     /**
