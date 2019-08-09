@@ -18,10 +18,9 @@
 <li><input type="text" name="NrIdentifikues" id="" value="{{$user->NrIdentifikues}}"></li>
 <li><input type="text" name="DataELindjes" id="" value="{{$user->DataELindjes}}"></li>
 <li><input type="text" name="ID_Roli" id="" value="{{$user->ID_Roli}}
-{{-- (@foreach($user->roli as $roli)
+ ">->(@foreach($user->roli as $roli)
 {{$roli->Roli}}
-
-@endforeach) --}} ">
+@endforeach)
 </li>
 @if ($user->Librat != null)
 <li><input type="text" name="Librat" id="" value="{{$user->Librat}}"></li>

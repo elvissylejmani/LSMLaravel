@@ -15,10 +15,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-      
           return view('insert',compact('users'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -28,7 +26,6 @@ class UserController extends Controller
     {
       
     }
-
     /**
      * Store a newly created resource in storage.
      *
