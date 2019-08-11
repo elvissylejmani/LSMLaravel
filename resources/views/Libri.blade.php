@@ -60,7 +60,7 @@ Librat:
     @foreach ($librat as $libri)
      <li>   {{$libri->NumriSerik}} </li>
       <li>   {{$libri->FotoLibrit}}  </li>
-      <li> @foreach ($libri->Zhanret as $zhanri)
+      <li> @foreach ($libri->zhanret as $zhanri)
         {{$zhanri->Zhanri}}
     @endforeach</li>
       <!-- <li>   {{$libri->ID_Zhanri}}</li> -->
@@ -77,7 +77,15 @@ Librat:
         {{$rafti->Rafti}}
     @endforeach</li>
      <li>    {{$libri->NumriILexuesve}}</li>
-     <li><a href="librat/{{$libri->id}}">Edit</a></li>    
+     <li><a href="librat/{{$libri->id}}">Edit</a></li>   
+     <li>
+        <form action="librat/{{$libri->id}}" method="POST">
+            @csrf
+             @method('DELETE')
+            <button type="submit">Delete</button>
+         </form>
+     </li> 
+     
    @endforeach
     
 </ul>

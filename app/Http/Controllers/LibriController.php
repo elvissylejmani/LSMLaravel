@@ -102,6 +102,7 @@ class LibriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Libri::findOrFail($id)->delete();
+        return redirect('librat');
     }
 }
