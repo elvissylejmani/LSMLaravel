@@ -1,3 +1,7 @@
+<?php 
+use LSM\Libri;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +26,19 @@
         <td> <input type="text" name="Autori" value="{{ old('Autori')}}" id=""></td>
         <th>Shtepia Botuese</th>
         <td> <input type="text" name="ID_ShtepiaBotuese" value="{{ old('ID_ShtepiaBotuese')}}" id=""></td>
+        
+        <td>
+        @foreach($librat as $libri)
+        <option value="">Shtepia Botuese</option>
+        @foreach($libri->ShtepiaBotuese as $shtepia)
+        <option value="{{$shtepia->ShtepiaBotuese_Emri}}">{{$shtepia->ShtepiaBotuese_Emri}}</option>
+        @endforeach
+        @endforeach
+        </td>
+
+
+
+
         <th>Numri i Faqeve</th>
         <td> <input type="text" name="NumriIFaqeve" value="{{ old('NumriIFaqeve')}}" id=""></td>
         <th>Viti i Botimit</th>
@@ -38,8 +55,8 @@
         <td><input type="text" name="NumriILexuesve" value="{{ old('NumriILexuesve')}}" id=""></td>
         <td><input type="submit" value="submit"> </td>
         
-        @if ($errors->any())
         </table>
+        @if ($errors->any())
 <div class="notification is-danger">
 
     
@@ -53,29 +70,28 @@
 @endif
     </form>
 
-    
 @if ($librat->Count())
 Librat:
 <ul>
     @foreach ($librat as $libri)
      <li>   {{$libri->NumriSerik}} </li>
       <li>   {{$libri->FotoLibrit}}  </li>
-      <li> @foreach ($libri->zhanret as $zhanri)
+      <li> @foreach (Libri::findOrFail($libri->id)->Zhanret as $zhanri)
         {{$zhanri->Zhanri}}
-    @endforeach</li>
+    @endforeach         </li>
       <!-- <li>   {{$libri->ID_Zhanri}}</li> -->
       <li>   {{$libri->Titulli}}</li>
      <li>    {{$libri->Autori}}</li>
-     <li> @foreach ($libri->ShtepiaBotuese as $shtepia)
+    <li> @foreach (Libri::findOrFail($libri->id)->ShtepiaBotuese as $shtepia)
         {{$shtepia->ShtepiaBotuese_Emri}}
-    @endforeach</li>
+    @endforeach         </li>
       <li>   {{$libri->NumriIFaqeve}}</li>
      <li>    {{$libri->VitiIBotimit}}</li>
      <li> @if($libri->VitiIRibotimit == null) Nuk eshte ribotuar libri @else  {{$libri->VitiIRibotimit}} @endif</li>
       <li>   {{$libri->Vellimi}}</li>
-     <li> @foreach ($libri->Rafti as $rafti)
+    <li> @foreach (Libri::findOrFail($libri->id)->Rafti as $rafti)
         {{$rafti->Rafti}}
-    @endforeach</li>
+    @endforeach         </li>
      <li>    {{$libri->NumriILexuesve}}</li>
      <li><a href="librat/{{$libri->id}}">Edit</a></li>   
      <li>

@@ -4,6 +4,7 @@ namespace LSM\Http\Controllers;
 
 use Illuminate\Http\Request;
 use LSM\Libri;
+use DB;
 
 class LibriController extends Controller
 {
@@ -15,8 +16,12 @@ class LibriController extends Controller
     public function index()
     {
         $librat = Libri::all();
+
+       // $shtepiatBotuese = DB::table('shtepia_botueses');
       
-          return view('Libri',compact('librat'));
+        return view('Libri',compact('librat'));
+
+
 
     }
 
