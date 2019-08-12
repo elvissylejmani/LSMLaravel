@@ -33,9 +33,14 @@ use LSM\User;
 </ul>
 
 </div>
+
 @endif
     </form>
 @if ($users->Count())
+<form action="" method="get">
+    <input type="text" name="Search">
+    <input type="submit" value="Sumit">
+</form>
 Userat:
 <ul>
     @foreach ($users as $user)
@@ -44,9 +49,9 @@ Userat:
       <li>   {{$user->NrPersonal}}</li>
       <li>   {{$user->NrIdentifikues}}</li>
      <li>    {{$user->DataELindjes}}</li>
-     <li> @foreach (User::findOrFail($user->id)->Roli; as $roli)
+     <li> @foreach (User::findOrFail($user->id)->Roli as $roli)
         {{$roli->Roli}}
-    @endforeach         </li>
+    @endforeach</li>
      @if ($user->Librat != null)<li>{{$user->Librat}}</li>@endif
      <li>   {{$user->Email}}</li>
      <li><a href="Admin/{{$user->id}}">Edit</a></li>
