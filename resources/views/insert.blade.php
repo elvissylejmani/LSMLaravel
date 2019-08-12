@@ -1,3 +1,6 @@
+<?php
+use LSM\User;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +44,9 @@ Userat:
       <li>   {{$user->NrPersonal}}</li>
       <li>   {{$user->NrIdentifikues}}</li>
      <li>    {{$user->DataELindjes}}</li>
-     <li> @foreach ($user->roli as $roli)
+     <li> @foreach (User::findOrFail($user->id)->Roli; as $roli)
         {{$roli->Roli}}
-    @endforeach</li>
+    @endforeach         </li>
      @if ($user->Librat != null)<li>{{$user->Librat}}</li>@endif
      <li>   {{$user->Email}}</li>
      <li><a href="Admin/{{$user->id}}">Edit</a></li>
