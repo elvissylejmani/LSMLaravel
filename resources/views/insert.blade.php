@@ -36,11 +36,24 @@ use LSM\User;
 
 @endif
     </form>
-@if ($users->Count())
-<form action="" method="get">
-    <input type="text" name="Search">
-    <input type="submit" value="Sumit">
-</form>
+    <h4>Search</h4>
+    <div class="Search" style="float: left">
+    <form action="" method="get">
+        <input type="text" name="Search">
+        <input type="submit" value="Sumit">
+    </form>
+</div>
+
+        <div style="float: right; margin-right:50rem">
+<h4>Shto Role:</h4>
+
+        <form action="" method="GET">
+            <input type="text" name="Roli">
+            <input type="submit" value="save">
+        </form>
+        </div>
+    @if ($users->Count())
+    <div class="users" style="float:left">
 Userat:
 <ul>
     @foreach ($users as $user)
@@ -66,5 +79,6 @@ Userat:
      
 </ul>
 @endif
+</div>
 </body>
 </html>
