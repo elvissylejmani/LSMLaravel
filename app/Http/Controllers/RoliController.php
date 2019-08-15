@@ -83,6 +83,7 @@ class RoliController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Roli::findOrFail($id)->delete();;
+        return redirect('Roli');
     }
 }

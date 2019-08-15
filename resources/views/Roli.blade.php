@@ -36,12 +36,8 @@ use LSM\Roli;
         <input type="submit" value="Sumit">
     </form>
 </div>
-
-
-
-        <a href="/Roli"> <h4>Shto Role:</h4> </a>
     @if ($roli->Count())
-    <div class="users" style="float:left">
+    <div class="users"> 
 Userat:
 <ul>
     @foreach ($roli as $roli)
