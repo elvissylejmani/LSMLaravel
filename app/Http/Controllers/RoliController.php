@@ -15,7 +15,6 @@ class RoliController extends Controller
     public function index()
     {
         $roli = Roli::all();
-
         return view('Roli',compact('roli'));
         
     }
@@ -37,7 +36,9 @@ class RoliController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $att = request()->all();
+       Roli::create($att);
+       return redirect('/Roli');
     }
 
     /**
@@ -59,7 +60,6 @@ class RoliController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
@@ -71,7 +71,8 @@ class RoliController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return "hello";
+        
     }
 
     /**

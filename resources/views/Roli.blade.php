@@ -10,9 +10,9 @@ use LSM\Roli;
     <title>Document</title>
 </head>
 <body>
-    <form action="Admin" method="POST">
+    <form action="/Roli" method="POST">
         @csrf
-        <input type="text" name="Mbiemri" value="{{ old('Mbiemri')}}" id="">
+        <input type="text" name="Roli" value="{{ old('Roli')}}" id="">
         <input type="submit" value="submit">
     </form>
         @if ($errors->any())
