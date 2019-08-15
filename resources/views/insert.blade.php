@@ -44,14 +44,9 @@ use LSM\User;
     </form>
 </div>
 
-        <div style="float: right; margin-right:50rem">
-<h4>Shto Role:</h4>
 
-        <form action="" method="GET">
-            <input type="text" name="Roli">
-            <input type="submit" value="save">
-        </form>
-        </div>
+
+        <a href="/Roli"> <h4>Shto Role:</h4> </a>
     @if ($users->Count())
     <div class="users" style="float:left">
 Userat:
