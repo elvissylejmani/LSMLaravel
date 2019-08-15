@@ -45,6 +45,7 @@ Userat:
      <li> <form action="Roli/{{$roli->id}}" method="POST">
        @csrf
        @method('DELETE') 
+       <li><a href="Roli/{{$roli->id}}">Edit</a></li>
        <button type="submit">Delete</button>
     </form></li>
    @endforeach
