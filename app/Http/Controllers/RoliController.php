@@ -14,7 +14,15 @@ class RoliController extends Controller
      */
     public function index()
     {
+        $q = Roli::query();
+        $name = request('Search');
         $roli = Roli::all();
+        if($name != null)
+        {
+            $q->where('Roli','like', $name);
+            $roli = $q->orderBy('id')->paginate(100);
+            return view('Roli',compact('roli'));
+        }
         return view('Roli',compact('roli'));
         
     }

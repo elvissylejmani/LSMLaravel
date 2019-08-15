@@ -38,7 +38,7 @@ use LSM\Roli;
 </div>
     @if ($roli->Count())
     <div class="users"> 
-Userat:
+Rolet:
 <ul>
     @foreach ($roli as $roli)
      <li>   {{$roli->Roli}} </li>
