@@ -3,6 +3,7 @@
 namespace LSM\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LSM\Roli;
 
 class RoliController extends Controller
 {
@@ -13,7 +14,10 @@ class RoliController extends Controller
      */
     public function index()
     {
-        //
+        $roli = Roli::all();
+
+        return $roli;
+        
     }
 
     /**
@@ -23,7 +27,6 @@ class RoliController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
