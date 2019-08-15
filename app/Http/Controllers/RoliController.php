@@ -16,7 +16,7 @@ class RoliController extends Controller
     {
         $roli = Roli::all();
 
-        return $roli;
+        return view('Roli',compact('roli'));
         
     }
 
