@@ -38,13 +38,14 @@ use LSM\Roli;
 </div>
     @if ($roli->Count())
     <div class="users"> 
-Userat:
+Rolet:
 <ul>
     @foreach ($roli as $roli)
      <li>   {{$roli->Roli}} </li>
      <li> <form action="Roli/{{$roli->id}}" method="POST">
        @csrf
        @method('DELETE') 
+       <li><a href="Roli/{{$roli->id}}">Edit</a></li>
        <button type="submit">Delete</button>
     </form></li>
    @endforeach

@@ -14,7 +14,15 @@ class RoliController extends Controller
      */
     public function index()
     {
+        $q = Roli::query();
+        $name = request('Search');
         $roli = Roli::all();
+        if($name != null)
+        {
+            $q->where('Roli','like', $name);
+            $roli = $q->orderBy('id')->paginate(100);
+            return view('Roli',compact('roli'));
+        }
         return view('Roli',compact('roli'));
         
     }
@@ -50,6 +58,9 @@ class RoliController extends Controller
     public function show($id)
     {
         //
+        $roli = Roli::findOrFail($id);
+        return view('EditRoli',compact('roli'));
+
     }
 
     /**
@@ -60,6 +71,7 @@ class RoliController extends Controller
      */
     public function edit($id)
     {
+        
     }
 
     /**
@@ -71,7 +83,9 @@ class RoliController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return "hello";
+        $roli = Roli::findOrFail($id);
+        $roli->update(request()->all());
+        return redirect('Roli');
         
     }
 
