@@ -41,8 +41,9 @@ use LSM\Roli;
 Rolet:
 <ul>
     @foreach ($roli as $roli)
-     <li>   {{$roli->Roli}} </li>
-     <li> <form action="Roli/{{$roli->id}}" method="POST">
+    <li>   {{$roli->id}} </li>
+    <li>   {{$roli->Roli}} </li>
+    <li> <form action="Roli/{{$roli->id}}" method="POST">
        @csrf
        @method('DELETE') 
        <li><a href="Roli/{{$roli->id}}">Edit</a></li>
