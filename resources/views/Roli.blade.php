@@ -33,7 +33,7 @@ use LSM\Roli;
     <div class="Search" style="float: left">
     <form action="" method="get">
         <input type="text" name="Search">
-        <input type="submit" value="Sumit">
+        <input type="submit" value="Search">
     </form>
 </div>
     @if ($roli->Count())
