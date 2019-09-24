@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    
 <form action="{{$user->id}}" method="POST">
 @csrf
 @method('PATCH')
@@ -27,10 +26,7 @@
 @endif
 <li><input type="text" name="Email" id="" value="{{$user->Email}}"></li>
 </ul>
-
-
 <input type="submit" value="submit">
 </form>
-
 </body>
 </html>
