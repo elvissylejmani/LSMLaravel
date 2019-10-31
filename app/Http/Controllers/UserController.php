@@ -53,11 +53,11 @@ class UserController extends Controller
             'Email' => 'required',
             'password' => ['required', 'min:6']
         ]);
-       $attributes['password']= Hash::make('password', [
+     /*  $attributes['password']= Hash::make('password', [
             'memory' => 1024,
             'time' => 2,
             'threads' => 2,
-        ]);
+        ]);*/
         User::create($attributes);
         return redirect('/Admin');
     }

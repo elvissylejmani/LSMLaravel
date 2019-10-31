@@ -37,3 +37,6 @@ Route::get('/zhanri', function () {
 Route::resource('/Admin', 'UserController');
 Route::resource('/librat', 'LibriController');
 Route::resource('/Roli', 'RoliController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
