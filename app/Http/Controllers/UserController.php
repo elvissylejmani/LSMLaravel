@@ -4,6 +4,7 @@ namespace LSM\Http\Controllers;
 
 use Illuminate\Http\Request;
 use LSM\User;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 use LSM\Http\Controllers\Input;
 class UserController extends Controller
@@ -15,6 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        if (Gate::allows('Admin')) {
         $q = User::query();
         $users = User::all();
         $name = request('Search');
@@ -25,6 +27,10 @@ class UserController extends Controller
             return view('insert',compact('users'));
         }
         return view('insert',compact('users'));
+    }
+    else {
+       return back();
+    }
     }
     /**
      * Show the form for creating a new resource.
@@ -70,8 +76,13 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        if (Gate::allows('Admin')) {
         $user = User::findOrFail($id);
         return view('EditUser',compact('user'));
+        }
+        else {
+            return redirect('/');
+         }
       
     }
 

@@ -3,6 +3,7 @@
 namespace LSM\Providers;
 
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -24,6 +25,16 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+        Gate::define('Admin', function () {
+            if(auth::check())
+            {
+                return true;
+            }
+            else {
+                false;
+            }
+        });
+
 
         //
     }
