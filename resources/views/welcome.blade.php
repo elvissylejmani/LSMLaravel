@@ -1,3 +1,5 @@
+@extends('home')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,5 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>   
+
+    @yield('content')
 </body>
 </html>
