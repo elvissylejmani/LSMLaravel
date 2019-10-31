@@ -15,7 +15,7 @@
 <li><input type="text" name="Mbiemri" id="" value="{{$user->Mbiemri}}"></li>
 <li><input type="text" name="NrPersonal" id="" value="{{$user->NrPersonal}}"></li>
 <li><input type="text" name="NrIdentifikues" id="" value="{{$user->NrIdentifikues}}"></li>
-<li><input type="text" name="DataELindjes" id="" value="{{$user->DataELindjes}}"></li>
+<li><input type="date" name="DataELindjes" id="" value="{{$user->DataELindjes}}"></li>
 <li><input type="text" name="ID_Roli" id="" value="{{$user->ID_Roli}}
  ">->(@foreach($user->roli as $roli)
 {{$roli->Roli}}
