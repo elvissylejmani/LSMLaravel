@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('Emri');
             $table->string('Mbiemri');
-            $table->unsignedInteger('NrPersonal')->nullable();
+            $table->unsignedInteger('NrPersonal');
             $table->unsignedInteger('NrIdentifikues')->nullable();
             $table->date('DataELindjes')->nullable();
             $table->unsignedInteger('ID_Roli')->default(1);
