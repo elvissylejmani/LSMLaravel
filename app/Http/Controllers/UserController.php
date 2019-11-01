@@ -56,14 +56,14 @@ class UserController extends Controller
             'NrIdentifikues' => 'required',
             'DataELindjes' => 'required',
             'ID_Roli' => 'required',
-            'Email' => 'required',
+            'email' => 'required',
             'password' => ['required', 'min:6']
         ]);
-     /*  $attributes['password']= Hash::make('password', [
+       $attributes['password']= Hash::make('password', [
             'memory' => 1024,
-            'time' => 2,
+            'time' => 12,
             'threads' => 2,
-        ]);*/
+        ]);
         User::create($attributes);
         return redirect('/Admin');
     }

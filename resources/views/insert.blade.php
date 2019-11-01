@@ -18,7 +18,7 @@ use LSM\User;
         <input type="text" name="NrIdentifikues" value="{{ old('NrIdentifikues')}}" id="">
         <input type="date" name="DataELindjes" value="{{ old('DataELindjes')}}" id="">
         <input type="text" name="ID_Roli" value="{{ old('ID_Roli')}}" id="">
-        <input type="email" name="Email" value="{{ old('Email')}}" id="">
+        <input type="email" name="email" value="{{ old('Email')}}" id="">
         <input type="password" name="password" value="{{ old('password')}}" id="">
         <input type="submit" value="submit">
     </form>

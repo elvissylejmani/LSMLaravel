@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->date('DataELindjes')->nullable();
             $table->unsignedInteger('ID_Roli')->default(1);
             $table->string('Librat')->nullable();
-            $table->string('Email')->unique();
+            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
