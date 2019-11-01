@@ -29,7 +29,7 @@ class UserController extends Controller
         return view('insert',compact('users'));
     }
     else {
-       return back();
+       return redirect('/login');
     }
     }
     /**
