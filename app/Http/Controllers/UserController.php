@@ -59,9 +59,7 @@ class UserController extends Controller
             'email' => 'required',
             'password' => ['required', 'min:6']
         ]);
-       $attributes['password'] = Hash::make('password', [
-        'rounds' => 12
-    ]);
+         $attributes['password'] = bcrypt($attributes['password']);
         User::create($attributes);
         return redirect('/Admin');
     }

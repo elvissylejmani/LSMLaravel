@@ -15,8 +15,19 @@
                                 {{ session('status') }}
                             </div>
                         @endif-->
-                    <a href="/Admin">Admin</a>
-                </div>
+                        <div id="app">
+                        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                        <ul class="navbar-nav auto">
+                        <li class="nav-item">
+                    <a class="nav-link" href="/Admin">Edit</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                     </ul>
+                        </nav>
+                        </div>
+                    </div>
                 @endif
             </div>
         </div>
