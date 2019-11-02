@@ -77,7 +77,7 @@ use LSM\User;
     @endforeach</li>
      @if ($user->Librat != null)<li class="nav-item" >{{$user->Librat}}</li>@endif
      <li class="nav-item">   {{$user->email}}</li>
-     <li class="nav-item w-100"><a href="Admin/{{$user->id}}" class="float-sm-left"><button type="button" class="btn btn-primary float-left">Edit</button></a>
+     <li class="nav-item mr-auto">  <a href="Admin/{{$user->id}}" class="float-left"><button type="button" class="btn btn-primary float-left">Edit</button></a>
      <form action="Admin/{{$user->id}}" method="POST" class="float-right">
        @csrf
        @method('DELETE') 
