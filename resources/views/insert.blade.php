@@ -18,7 +18,7 @@ use LSM\User;
         <input type="text" name="NrIdentifikues" value="{{ old('NrIdentifikues')}}" id="">
         <input type="date" name="DataELindjes" value="{{ old('DataELindjes')}}" id="">
         <input type="text" name="ID_Roli" value="{{ old('ID_Roli')}}" id="">
-        <input type="email" name="email" value="{{ old('Email')}}" id="">
+        <input type="email" name="email" value="{{ old('email')}}" id="">
         <input type="password" name="password" value="{{ old('password')}}" id="">
         <input type="submit" value="submit">
     </form>
@@ -61,7 +61,7 @@ Userat:
         {{$roli->Roli}}
     @endforeach</li>
      @if ($user->Librat != null)<li>{{$user->Librat}}</li>@endif
-     <li>   {{$user->Email}}</li>
+     <li>   {{$user->email}}</li>
      <li><a href="Admin/{{$user->id}}">Edit</a></li>
      <li> <form action="Admin/{{$user->id}}" method="POST">
        @csrf
