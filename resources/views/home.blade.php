@@ -19,7 +19,10 @@
                         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                         <ul class="navbar-nav auto">
                         <li class="nav-item">
-                    <a class="nav-link" href="/Admin">Edit</a>
+                    <a class="nav-link" href="/Admin">Search</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/Insert">Insert</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>

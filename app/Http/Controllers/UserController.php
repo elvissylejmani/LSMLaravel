@@ -24,9 +24,9 @@ class UserController extends Controller
         {
             $q->where('Emri','like', $name);
             $users = $q->orderBy('id')->paginate(100);
-            return view('insert',compact('users'));
+            return view('Search',compact('users'));
         }
-        return view('insert',compact('users'));
+        return view('Search',compact('users'));
     }
     else {
        return redirect('/login');
