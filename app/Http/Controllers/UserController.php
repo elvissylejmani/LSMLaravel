@@ -56,7 +56,7 @@ class UserController extends Controller
             'NrIdentifikues' => 'required',
             'DataELindjes' => 'required',
             'ID_Roli' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:users',
             'password' => ['required', 'min:6']
         ]);
          $attributes['password'] = bcrypt($attributes['password']);
