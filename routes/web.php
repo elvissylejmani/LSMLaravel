@@ -17,12 +17,12 @@ use App\User;
 
 Route::get('/', function () {
 
-  //  if (Gate::allows('Admin')) {
+    if (Gate::allows('Admin')) {
         return view('welcome');
-    //    }
-      //  else {
-        //    return redirect('/login');
-       // }
+        }
+        else {
+            return redirect('/login');
+        }
 });
 Route::get('/zhanri', function () {
 
