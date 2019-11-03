@@ -13,17 +13,23 @@ use LSM\User;
 <body>
 @section('content')
     <div class="container">
-    
-    <h4>Search</h4>
-    <div class="Search" style="float: left">
+    <div class="row">
+     <p class="h3">Search:  </p> &nbsp;
     <form action=""  method="get">
-        <input type="text" name="Search">
-        <input type="submit" value="Sumit">
-    </form>
+    <div class="input-group mb-3">
+  <input type="text" class="form-control" name="Search" placeholder="Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="Submit" id="button-addon2">Search</button>
+  </div>
 </div>
-        <a href="/Roli"> <h4>Shto Role:</h4> </a>
+    </form>
+        <div class="col"></div>
+         <div class="col col-sm-3 ml-10">
+             <a href="/Roli"> <button type="button" class="btn btn-primary"> Shto Role </button> </a>
+          </div>
+     </div>
+    </div>
     @if ($users->Count())
-    <!--<div class="users" style="float:left"> -->
         <div class="container">
         <div class="row">
 <div class="col-sm">
