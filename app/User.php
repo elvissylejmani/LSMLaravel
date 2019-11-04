@@ -3,7 +3,7 @@
 namespace LSM;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use LSM\Notifications\MailResetPasswordNotification;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -40,5 +40,9 @@ class User extends Authenticatable
     public function Roli()
     {
         return $this->hasMany(Roli::class, 'id', 'ID_Roli');
+    }
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new MailResetPasswordNotification($token));
     }
 }
