@@ -52,12 +52,12 @@ class UserController extends Controller
         $attributes = request()->validate([
             'Emri' => 'required',
             'Mbiemri' => 'required',
-            'NrPersonal' => 'required',
-            'NrIdentifikues' => 'required',
+            'NrPersonal' => 'required|numeric',
+            'NrIdentifikues' => 'required|numeric',
             'DataELindjes' => 'required',
             'ID_Roli' => 'required',
             'email' => 'required|unique:users',
-            'password' => ['required', 'min:6']
+            'password' => ['required', 'min:6','confirmed']
         ]);
          $attributes['password'] = bcrypt($attributes['password']);
         User::create($attributes);
