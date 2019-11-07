@@ -21,10 +21,11 @@ use LSM\Libri;
 
     <form action="librat" method="POST">
         @csrf
-        <ul>
-            <div class="row">
+            <div class="row justify-content-md-center">
                     <nav class="navbar navbar-md navbar-light bg-white shadow-sm align-start border border rounded">
-            <div class="col">
+    <div class="col">
+    </div>          
+                        <div class="col col-md-12">
        
         <input type="text" name="NumriSerik" class="form-control mb-4 {{$errors->has('NumriSerik') ? 'border border-danger' : ''}}" value="{{ old('NumriSerik')}}" placeholder="NumriSerik" aria-label="Username" aria-describedby="basic-addon1">
         
@@ -32,59 +33,57 @@ use LSM\Libri;
        
         <input type="text" name="ID_Zhanri" class="form-control mb-4 {{$errors->has('ID_Zhanri') ? 'border border-danger' : ''}}" value="{{ old('ID_Zhanri')}}" placeholder="ID e zhanrit" aria-label="Username" aria-describedby="basic-addon1">
         
-    </div>
-            <div class="col">
         
         <input type="text" name="Titulli" class="form-control mb-4 {{$errors->has('Titulli') ? 'border border-danger' : ''}}" value="{{ old('Titulli')}}" placeholder="Titulli" aria-label="Username" aria-describedby="basic-addon1">
         
         <input type="text" name="Autori" class="form-control mb-4 {{$errors->has('Autori') ? 'border border-danger' : ''}}" value="{{ old('Autori')}}" placeholder="Autori" aria-label="Username" aria-describedby="basic-addon1">
         
-        <input type="text" name="ID_ShtepiaBotuese" class="form-control mb-4 {{$errors->has('ID_ShtepiaBotuese') ? 'border border-danger' : ''}}" value="{{ old('ID_ShtepiaBotuese')}}" placeholder="ID_ShtepiaBotuese" aria-label="Username" aria-describedby="basic-addon1">
 
-    </div>
-
-<div class="col">
        
-            
-            @foreach($librat as $libri)
-            @if ($libri->ShtepiaBotuese != null)
-            @foreach($libri->ShtepiaBotuese as $shtepia)
-            <li>
-            <option value="">Shtepia Botuese</option>
+        <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">ShtepiaBotuese</label>
+                </div>
+                <select class="custom-select" name="ID_ShtepiaBotuese" id="inputGroupSelect01">
+            @if ($Shtepia != null)
+            <option value=""></option>
+            @foreach($Shtepia as $shtepia)
+            {{-- <select class="custom-select mb-4" name="Category" id="">
+                    <p>ShtepiaBotuese</p>
+                    <option value=""></option>
             <option value="{{$shtepia->ShtepiaBotuese_Emri}}">{{$shtepia->ShtepiaBotuese_Emri}}</option>
-            </li>
+        </select>     --}}
+       
+                        
+                   
+                        <option value="{{$shtepia->id}}">{{$shtepia->ShtepiaBotuese_Emri}}</option>
+               
             @endforeach
             @endif
-            @endforeach
-        
+        </select>
+    </div>
 
 
 
 
         <input type="text" name="NumriIFaqeve" class="form-control mb-4 {{$errors->has('NumriIFaqeve') ? 'border border-danger' : ''}}" value="{{ old('NumriIFaqeve')}}" placeholder="NumriIFaqeve" aria-label="Username" aria-describedby="basic-addon1">
 
-        <input type="text" name="VitiIBotimit" class="form-control mb-4 {{$errors->has('VitiIBotimit') ? 'border border-danger' : ''}}" value="{{ old('VitiIBotimit')}}" placeholder="VitiIBotimit" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="date" name="VitiIBotimit" class="form-control mb-4 {{$errors->has('VitiIBotimit') ? 'border border-danger' : ''}}" value="{{ old('VitiIBotimit')}}" placeholder="VitiIBotimit" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="date" name="VitiIRibotimit" class="form-control mb-4 {{$errors->has('VitiIRibotimit') ? 'border border-danger' : ''}}" value="{{ old('VitiIRibotimit')}}" placeholder="Viti i ribotimit" aria-label="Username" aria-describedby="basic-addon1">
 
-    </div>
-<div class="col">
-        <li>Viti i Ribotimit</li>
-        <li><input type="date" name="VitiIRibotimit" value="{{ old('VitiIRibotimit')}}" id=""></li>
-        <li>Vellimi</li>
-        <li><input type="text" name="Vellimi" value="{{ old('Vellimi')}}" id=""></li>
-        <li>Rafti</li>
-        <li><input type="text" name="ID_Rafti" value="{{ old('ID_Rafti')}}" id=""></li>
-    </div>
+        <input type="text" name="Vellimi" class="form-control mb-4 {{$errors->has('Vellimi') ? 'border border-danger' : ''}}" value="{{ old('Vellimi')}}" placeholder="Vellimi" aria-label="Username" aria-describedby="basic-addon1">
+        
+        <input type="text" name="ID_Rafti" class="form-control mb-4 {{$errors->has('ID_Rafti') ? 'border border-danger' : ''}}" value="{{ old('ID_Rafti')}}" placeholder="ID_Rafti" aria-label="Username" aria-describedby="basic-addon1">
 
-    <div class="col">
-        <li>Statusi</li>
-        <li><input type="text" name="Statusi" value="{{ old('Statusi')}}" id=""></li>
-        <li>Numri i Lexuesve</li>
-        <li><input type="text" name="NumriILexuesve" value="{{ old('NumriILexuesve')}}" id=""></li>
-        <li><input type="submit" value="submit"> </li>
+        <input type="text" name="Statusi" class="form-control mb-4 {{$errors->has('Statusi') ? 'border border-danger' : ''}}" value="{{ old('Statusi')}}" placeholder="Statusi" aria-label="Username" aria-describedby="basic-addon1">
+
+        <input type="text" name="NumriILexuesve" class="form-control mb-4 {{$errors->has('NumriILexuesve') ? 'border border-danger' : ''}}" value="{{ old('NumriILexuesve')}}" placeholder="NumriILexuesve" aria-label="Username" aria-describedby="basic-addon1">
+
+        <button type="Submit" class="btn btn-primary">Shto</button>
     </div>
+    <div class="col"></div>
     </nav>
 </div>
-</ul>
         @if ($errors->any())
 <div class="notification is-danger">
 
