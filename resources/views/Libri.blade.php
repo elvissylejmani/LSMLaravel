@@ -17,7 +17,7 @@ use LSM\Libri;
 </head>
 <body>
     @section('content')
-    <div class="container-fluid">
+    <div class="container">
 
     <form action="librat" method="POST">
         @csrf
@@ -25,20 +25,22 @@ use LSM\Libri;
             <div class="row">
                     <nav class="navbar navbar-md navbar-light bg-white shadow-sm align-start border border rounded">
             <div class="col">
-        <li class="nav-item">Numri Serik</li>
-        <li><input type="text" name="NumriSerik" value="{{ old('NumriSerik')}}" id=""></li>
-        <li>Foto e Librit</li>
-        <li> <input type="text" name="FotoLibrit" value="{{ old('FotoLibrit')}}" id=""></li>
-        <li>Zhanri</li>
-        <li>  <input type="text" name="ID_Zhanri" value="{{ old('ID_Zhanri')}}" id=""></li>
+       
+        <input type="text" name="NumriSerik" class="form-control mb-4 {{$errors->has('NumriSerik') ? 'border border-danger' : ''}}" value="{{ old('NumriSerik')}}" placeholder="NumriSerik" aria-label="Username" aria-describedby="basic-addon1">
+        
+        <input type="text" name="FotoLibrit" class="form-control mb-4 {{$errors->has('FotoLibrit') ? 'border border-danger' : ''}}" value="{{ old('FotoLibrit')}}" placeholder="Foto e Librit" aria-label="Username" aria-describedby="basic-addon1">
+       
+        <input type="text" name="ID_Zhanri" class="form-control mb-4 {{$errors->has('ID_Zhanri') ? 'border border-danger' : ''}}" value="{{ old('ID_Zhanri')}}" placeholder="ID e zhanrit" aria-label="Username" aria-describedby="basic-addon1">
+        
     </div>
             <div class="col">
-        <li>Titulli</li>
-        <li> <input type="text" name="Titulli" value="{{ old('Titulli')}}" id=""></li>
-        <li>Autori</li>
-        <li> <input type="text" name="Autori" value="{{ old('Autori')}}" id=""></li>
-        <li>Shtepia Botuese</li>
-        <li> <input type="text" name="ID_ShtepiaBotuese" value="{{ old('ID_ShtepiaBotuese')}}" id=""></li>
+        
+        <input type="text" name="Titulli" class="form-control mb-4 {{$errors->has('Titulli') ? 'border border-danger' : ''}}" value="{{ old('Titulli')}}" placeholder="Titulli" aria-label="Username" aria-describedby="basic-addon1">
+        
+        <input type="text" name="Autori" class="form-control mb-4 {{$errors->has('Autori') ? 'border border-danger' : ''}}" value="{{ old('Autori')}}" placeholder="Autori" aria-label="Username" aria-describedby="basic-addon1">
+        
+        <input type="text" name="ID_ShtepiaBotuese" class="form-control mb-4 {{$errors->has('ID_ShtepiaBotuese') ? 'border border-danger' : ''}}" value="{{ old('ID_ShtepiaBotuese')}}" placeholder="ID_ShtepiaBotuese" aria-label="Username" aria-describedby="basic-addon1">
+
     </div>
 
 <div class="col">
