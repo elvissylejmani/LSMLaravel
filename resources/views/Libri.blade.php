@@ -47,24 +47,24 @@ use LSM\Libri;
        
             
             @foreach($librat as $libri)
+            @if ($libri->ShtepiaBotuese != null)
             @foreach($libri->ShtepiaBotuese as $shtepia)
-            @if ($shtepia != null)
             <li>
             <option value="">Shtepia Botuese</option>
             <option value="{{$shtepia->ShtepiaBotuese_Emri}}">{{$shtepia->ShtepiaBotuese_Emri}}</option>
             </li>
-            @endif
             @endforeach
+            @endif
             @endforeach
         
 
 
 
 
-        <li>Numri i Faqeve</li>
-        <li> <input type="text" name="NumriIFaqeve" value="{{ old('NumriIFaqeve')}}" id=""></li>
-        <li>Viti i Botimit</li>
-        <li>  <input type="date" name="VitiIBotimit" value="{{ old('VitiIBotimit')}}" id=""></li>
+        <input type="text" name="NumriIFaqeve" class="form-control mb-4 {{$errors->has('NumriIFaqeve') ? 'border border-danger' : ''}}" value="{{ old('NumriIFaqeve')}}" placeholder="NumriIFaqeve" aria-label="Username" aria-describedby="basic-addon1">
+
+        <input type="text" name="VitiIBotimit" class="form-control mb-4 {{$errors->has('VitiIBotimit') ? 'border border-danger' : ''}}" value="{{ old('VitiIBotimit')}}" placeholder="VitiIBotimit" aria-label="Username" aria-describedby="basic-addon1">
+
     </div>
 <div class="col">
         <li>Viti i Ribotimit</li>
