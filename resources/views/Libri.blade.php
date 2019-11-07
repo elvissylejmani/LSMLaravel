@@ -1,7 +1,7 @@
 <?php 
 use LSM\Libri;
 ?>
-
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +11,7 @@ use LSM\Libri;
     <title>Document</title>
 </head>
 <body>
+    @section('content')
     <form action="librat" method="POST">
         @csrf
         <table>
@@ -106,5 +107,7 @@ Librat:
     
 </ul>
 @endif
+
+@endsection
 </body>
 </html>
